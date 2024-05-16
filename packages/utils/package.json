@@ -1,0 +1,26 @@
+{
+  "name": "@aics-ui/utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/aics-ui-utils.cjs.js",
+  "module": "./dist/aics-ui-utils.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "node": "./dist/aics-ui-utils.umd.js",
+    "default": "./dist/aics-ui-utils.iife.js",
+    "require": "./dist/aics-ui-utils.cjs.js",
+    "import": "./dist/aics-ui-utils.es.js",
+    "types": "./dist/index.d.ts"
+  },
+  "scripts": {
+    "build": "vite build && tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11"
+  }
+}
