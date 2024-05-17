@@ -4,16 +4,16 @@
   "description": "",
   "main": "./dist/aics-ui-utils.cjs.js",
   "module": "./dist/aics-ui-utils.es.js",
-  "types": "./dist/index.d.ts",
+  "types": "./src/index.ts",
   "exports": {
     "node": "./dist/aics-ui-utils.umd.js",
-    "default": "./dist/aics-ui-utils.iife.js",
+    "default": "./dist/aics-ui-utils.es.js",
     "require": "./dist/aics-ui-utils.cjs.js",
     "import": "./dist/aics-ui-utils.es.js",
-    "types": "./dist/index.d.ts"
+    "types": "./src/index.ts"
   },
   "scripts": {
-    "build": "vite build && tsc"
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",

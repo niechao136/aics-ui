@@ -1,19 +1,26 @@
 <script setup lang="ts">
 import { computed } from 'vue-demi'
 import type { CSSProperties } from 'vue-demi'
-import { addUnit, definePropType, isUndefined } from '@aics-ui/utils'
+import { addUnit, isUndefined } from '@aics-ui/utils'
+import { IIconProp } from './model'
 
 defineOptions({
   name: 'AicsIcon',
   inheritAttrs: false,
 })
 
-const props = defineProps<{
-  size: {
-    type: definePropType<number | string>([Number, String]),
-  },
-  color: String
-}>()
+const props: IIconProp = defineProps({
+  size: [Number, String],
+  color: String,
+  isUrl: {
+    type: Boolean,
+    default: () => false,
+  }
+})
+
+const className = computed(() => {
+  return ['aics-icon', { 'url-icon': props.isUrl, 'svg-icon': !props.isUrl }]
+})
 
 const style = computed<CSSProperties>(() => {
   const { size, color } = props
@@ -27,7 +34,9 @@ const style = computed<CSSProperties>(() => {
 </script>
 
 <template>
-
+  <i :class="className" :style="style" v-bind="$attrs">
+    <slot />
+  </i>
 </template>
 
 <style scoped>
